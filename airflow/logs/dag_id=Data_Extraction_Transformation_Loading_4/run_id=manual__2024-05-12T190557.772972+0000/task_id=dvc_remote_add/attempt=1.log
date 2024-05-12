@@ -1,0 +1,22 @@
+[2024-05-12T19:06:18.101+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-12T19:06:18.154+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Data_Extraction_Transformation_Loading_4.dvc_remote_add manual__2024-05-12T19:05:57.772972+00:00 [queued]>
+[2024-05-12T19:06:18.186+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Data_Extraction_Transformation_Loading_4.dvc_remote_add manual__2024-05-12T19:05:57.772972+00:00 [queued]>
+[2024-05-12T19:06:18.188+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-05-12T19:06:18.240+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dvc_remote_add> on 2024-05-12 19:05:57.772972+00:00
+[2024-05-12T19:06:18.249+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'Data_Extraction_Transformation_Loading_4', 'dvc_remote_add', 'manual__2024-05-12T19:05:57.772972+00:00', '--job-id', '143', '--raw', '--subdir', 'DAGS_FOLDER/i202478_dag.py', '--cfg-path', '/tmp/tmpoilslsva']
+[2024-05-12T19:06:18.251+0000] {standard_task_runner.py:91} INFO - Job 143: Subtask dvc_remote_add
+[2024-05-12T19:06:18.253+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=828) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-05-12T19:06:18.254+0000] {standard_task_runner.py:63} INFO - Started process 853 to run task
+[2024-05-12T19:06:18.371+0000] {task_command.py:426} INFO - Running <TaskInstance: Data_Extraction_Transformation_Loading_4.dvc_remote_add manual__2024-05-12T19:05:57.772972+00:00 [running]> on host da8cc0c3f69d
+[2024-05-12T19:06:18.581+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='Data_Extraction_Transformation_Loading_4' AIRFLOW_CTX_TASK_ID='dvc_remote_add' AIRFLOW_CTX_EXECUTION_DATE='2024-05-12T19:05:57.772972+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-12T19:05:57.772972+00:00'
+[2024-05-12T19:06:18.583+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-12T19:06:18.597+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-05-12T19:06:18.598+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/airflow/dvc_repo && dvc remote add -d my_google_drive gdrive://1i3kGKsxTKMw3-tN9wpJ6fHjrIOoFaO0j -f']
+[2024-05-12T19:06:18.608+0000] {subprocess.py:86} INFO - Output:
+[2024-05-12T19:06:19.764+0000] {subprocess.py:93} INFO - Setting 'my_google_drive' as a default remote.
+[2024-05-12T19:06:20.025+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-05-12T19:06:20.026+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-12T19:06:20.088+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Data_Extraction_Transformation_Loading_4, task_id=dvc_remote_add, run_id=manual__2024-05-12T19:05:57.772972+00:00, execution_date=20240512T190557, start_date=20240512T190618, end_date=20240512T190620
+[2024-05-12T19:06:20.158+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-12T19:06:20.206+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-05-12T19:06:20.218+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

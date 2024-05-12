@@ -1,0 +1,32 @@
+[2024-05-12T17:40:17.274+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-12T17:40:17.326+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Data_Extraction_Transformation_Loading.git_init scheduled__2024-05-11T00:00:00+00:00 [queued]>
+[2024-05-12T17:40:17.353+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Data_Extraction_Transformation_Loading.git_init scheduled__2024-05-11T00:00:00+00:00 [queued]>
+[2024-05-12T17:40:17.354+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-05-12T17:40:17.427+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): git_init> on 2024-05-11 00:00:00+00:00
+[2024-05-12T17:40:17.438+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'Data_Extraction_Transformation_Loading', 'git_init', 'scheduled__2024-05-11T00:00:00+00:00', '--job-id', '107', '--raw', '--subdir', 'DAGS_FOLDER/i202478_dag.py', '--cfg-path', '/tmp/tmpjsn1o1f9']
+[2024-05-12T17:40:17.441+0000] {standard_task_runner.py:91} INFO - Job 107: Subtask git_init
+[2024-05-12T17:40:17.444+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=83) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-05-12T17:40:17.446+0000] {standard_task_runner.py:63} INFO - Started process 92 to run task
+[2024-05-12T17:40:17.593+0000] {task_command.py:426} INFO - Running <TaskInstance: Data_Extraction_Transformation_Loading.git_init scheduled__2024-05-11T00:00:00+00:00 [running]> on host da8cc0c3f69d
+[2024-05-12T17:40:17.829+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='Data_Extraction_Transformation_Loading' AIRFLOW_CTX_TASK_ID='git_init' AIRFLOW_CTX_EXECUTION_DATE='2024-05-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-11T00:00:00+00:00'
+[2024-05-12T17:40:17.830+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-12T17:40:17.879+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-05-12T17:40:17.881+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'git init']
+[2024-05-12T17:40:17.894+0000] {subprocess.py:86} INFO - Output:
+[2024-05-12T17:40:17.903+0000] {subprocess.py:93} INFO - hint: Using 'master' as the name for the initial branch. This default branch name
+[2024-05-12T17:40:17.904+0000] {subprocess.py:93} INFO - hint: is subject to change. To configure the initial branch name to use in all
+[2024-05-12T17:40:17.905+0000] {subprocess.py:93} INFO - hint: of your new repositories, which will suppress this warning, call:
+[2024-05-12T17:40:17.906+0000] {subprocess.py:93} INFO - hint:
+[2024-05-12T17:40:17.907+0000] {subprocess.py:93} INFO - hint: 	git config --global init.defaultBranch <name>
+[2024-05-12T17:40:17.908+0000] {subprocess.py:93} INFO - hint:
+[2024-05-12T17:40:17.909+0000] {subprocess.py:93} INFO - hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+[2024-05-12T17:40:17.910+0000] {subprocess.py:93} INFO - hint: 'development'. The just-created branch can be renamed via this command:
+[2024-05-12T17:40:17.911+0000] {subprocess.py:93} INFO - hint:
+[2024-05-12T17:40:17.911+0000] {subprocess.py:93} INFO - hint: 	git branch -m <name>
+[2024-05-12T17:40:17.912+0000] {subprocess.py:93} INFO - Initialized empty Git repository in /tmp/airflowtmpvkaftmro/.git/
+[2024-05-12T17:40:17.913+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-05-12T17:40:17.916+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-12T17:40:17.979+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Data_Extraction_Transformation_Loading, task_id=git_init, run_id=scheduled__2024-05-11T00:00:00+00:00, execution_date=20240511T000000, start_date=20240512T174017, end_date=20240512T174017
+[2024-05-12T17:40:18.064+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-12T17:40:18.119+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-05-12T17:40:18.137+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

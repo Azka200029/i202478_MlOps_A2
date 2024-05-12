@@ -1,0 +1,36 @@
+[2024-05-12T18:28:09.031+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-12T18:28:09.120+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Data_Extraction_Transformation_Loading_4.dvc_init scheduled__2024-05-11T00:00:00+00:00 [queued]>
+[2024-05-12T18:28:09.185+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Data_Extraction_Transformation_Loading_4.dvc_init scheduled__2024-05-11T00:00:00+00:00 [queued]>
+[2024-05-12T18:28:09.188+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-05-12T18:28:09.341+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dvc_init> on 2024-05-11 00:00:00+00:00
+[2024-05-12T18:28:09.360+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'Data_Extraction_Transformation_Loading_4', 'dvc_init', 'scheduled__2024-05-11T00:00:00+00:00', '--job-id', '128', '--raw', '--subdir', 'DAGS_FOLDER/i202478_dag.py', '--cfg-path', '/tmp/tmpd4zkyuxn']
+[2024-05-12T18:28:09.368+0000] {standard_task_runner.py:91} INFO - Job 128: Subtask dvc_init
+[2024-05-12T18:28:09.376+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=542) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-05-12T18:28:09.381+0000] {standard_task_runner.py:63} INFO - Started process 551 to run task
+[2024-05-12T18:28:09.587+0000] {task_command.py:426} INFO - Running <TaskInstance: Data_Extraction_Transformation_Loading_4.dvc_init scheduled__2024-05-11T00:00:00+00:00 [running]> on host da8cc0c3f69d
+[2024-05-12T18:28:09.872+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='Data_Extraction_Transformation_Loading_4' AIRFLOW_CTX_TASK_ID='dvc_init' AIRFLOW_CTX_EXECUTION_DATE='2024-05-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-11T00:00:00+00:00'
+[2024-05-12T18:28:09.874+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-12T18:28:09.897+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-05-12T18:28:09.899+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/airflow/dvc_repo && dvc init --force --no-scm']
+[2024-05-12T18:28:09.914+0000] {subprocess.py:86} INFO - Output:
+[2024-05-12T18:28:12.231+0000] {subprocess.py:93} INFO - Initialized DVC repository.
+[2024-05-12T18:28:12.232+0000] {subprocess.py:93} INFO - 
+[2024-05-12T18:28:12.247+0000] {subprocess.py:93} INFO - +---------------------------------------------------------------------+
+[2024-05-12T18:28:12.248+0000] {subprocess.py:93} INFO - |                                                                     |
+[2024-05-12T18:28:12.249+0000] {subprocess.py:93} INFO - |        DVC has enabled anonymous aggregate usage analytics.         |
+[2024-05-12T18:28:12.250+0000] {subprocess.py:93} INFO - |     Read the analytics documentation (and how to opt-out) here:     |
+[2024-05-12T18:28:12.251+0000] {subprocess.py:93} INFO - |             <https://dvc.org/doc/user-guide/analytics>              |
+[2024-05-12T18:28:12.252+0000] {subprocess.py:93} INFO - |                                                                     |
+[2024-05-12T18:28:12.254+0000] {subprocess.py:93} INFO - +---------------------------------------------------------------------+
+[2024-05-12T18:28:12.255+0000] {subprocess.py:93} INFO - 
+[2024-05-12T18:28:12.257+0000] {subprocess.py:93} INFO - What's next?
+[2024-05-12T18:28:12.262+0000] {subprocess.py:93} INFO - ------------
+[2024-05-12T18:28:12.264+0000] {subprocess.py:93} INFO - - Check out the documentation: <https://dvc.org/doc>
+[2024-05-12T18:28:12.265+0000] {subprocess.py:93} INFO - - Get help and share ideas: <https://dvc.org/chat>
+[2024-05-12T18:28:12.266+0000] {subprocess.py:93} INFO - - Star us on GitHub: <https://github.com/iterative/dvc>
+[2024-05-12T18:28:12.573+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-05-12T18:28:12.578+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-12T18:28:12.677+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Data_Extraction_Transformation_Loading_4, task_id=dvc_init, run_id=scheduled__2024-05-11T00:00:00+00:00, execution_date=20240511T000000, start_date=20240512T182809, end_date=20240512T182812
+[2024-05-12T18:28:12.779+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-12T18:28:12.872+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-05-12T18:28:12.896+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

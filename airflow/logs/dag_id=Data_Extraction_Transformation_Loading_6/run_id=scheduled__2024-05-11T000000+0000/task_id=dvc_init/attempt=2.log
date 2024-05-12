@@ -1,0 +1,37 @@
+[2024-05-12T17:18:02.850+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-12T17:18:02.911+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Data_Extraction_Transformation_Loading_6.dvc_init scheduled__2024-05-11T00:00:00+00:00 [queued]>
+[2024-05-12T17:18:02.939+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Data_Extraction_Transformation_Loading_6.dvc_init scheduled__2024-05-11T00:00:00+00:00 [queued]>
+[2024-05-12T17:18:02.940+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2024-05-12T17:18:03.008+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dvc_init> on 2024-05-11 00:00:00+00:00
+[2024-05-12T17:18:03.021+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'Data_Extraction_Transformation_Loading_6', 'dvc_init', 'scheduled__2024-05-11T00:00:00+00:00', '--job-id', '99', '--raw', '--subdir', 'DAGS_FOLDER/i202478_dag.py', '--cfg-path', '/tmp/tmp7vpmazjb']
+[2024-05-12T17:18:03.024+0000] {standard_task_runner.py:91} INFO - Job 99: Subtask dvc_init
+[2024-05-12T17:18:03.030+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=241) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-05-12T17:18:03.031+0000] {standard_task_runner.py:63} INFO - Started process 250 to run task
+[2024-05-12T17:18:03.215+0000] {task_command.py:426} INFO - Running <TaskInstance: Data_Extraction_Transformation_Loading_6.dvc_init scheduled__2024-05-11T00:00:00+00:00 [running]> on host 0c931294f372
+[2024-05-12T17:18:03.446+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='Data_Extraction_Transformation_Loading_6' AIRFLOW_CTX_TASK_ID='dvc_init' AIRFLOW_CTX_EXECUTION_DATE='2024-05-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-11T00:00:00+00:00'
+[2024-05-12T17:18:03.448+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-12T17:18:03.474+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-05-12T17:18:03.478+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'dvc init --force']
+[2024-05-12T17:18:03.489+0000] {subprocess.py:86} INFO - Output:
+[2024-05-12T17:18:05.105+0000] {subprocess.py:93} INFO - ERROR: failed to initiate DVC - /tmp/airflowtmpawk8ha6f is not tracked by any supported SCM tool (e.g. Git). Use `--no-scm` if you don't want to use any SCM or `--subdir` if initializing inside a subdirectory of a parent SCM repository.
+[2024-05-12T17:18:05.294+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-05-12T17:18:05.295+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-12T17:18:05.319+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-05-12T17:18:05.331+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=Data_Extraction_Transformation_Loading_6, task_id=dvc_init, run_id=scheduled__2024-05-11T00:00:00+00:00, execution_date=20240511T000000, start_date=20240512T171802, end_date=20240512T171805
+[2024-05-12T17:18:05.398+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 99 for task dvc_init (Bash command failed. The command returned a non-zero exit code 1.; 250)
+[2024-05-12T17:18:05.423+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-12T17:18:05.465+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-12T17:18:05.496+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,23 @@
+[2024-05-12T18:59:50.088+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-12T18:59:50.135+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Data_Extraction_Transformation_Loading_4.transform_data manual__2024-05-12T18:28:05.864766+00:00 [queued]>
+[2024-05-12T18:59:50.151+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Data_Extraction_Transformation_Loading_4.transform_data manual__2024-05-12T18:28:05.864766+00:00 [queued]>
+[2024-05-12T18:59:50.152+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-05-12T18:59:50.189+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform_data> on 2024-05-12 18:28:05.864766+00:00
+[2024-05-12T18:59:50.198+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'Data_Extraction_Transformation_Loading_4', 'transform_data', 'manual__2024-05-12T18:28:05.864766+00:00', '--job-id', '137', '--raw', '--subdir', 'DAGS_FOLDER/i202478_dag.py', '--cfg-path', '/tmp/tmpkb699gy9']
+[2024-05-12T18:59:50.200+0000] {standard_task_runner.py:91} INFO - Job 137: Subtask transform_data
+[2024-05-12T18:59:50.202+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=725) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-05-12T18:59:50.202+0000] {standard_task_runner.py:63} INFO - Started process 734 to run task
+[2024-05-12T18:59:50.277+0000] {task_command.py:426} INFO - Running <TaskInstance: Data_Extraction_Transformation_Loading_4.transform_data manual__2024-05-12T18:28:05.864766+00:00 [running]> on host da8cc0c3f69d
+[2024-05-12T18:59:50.415+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='Data_Extraction_Transformation_Loading_4' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-12T18:28:05.864766+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-12T18:28:05.864766+00:00'
+[2024-05-12T18:59:50.416+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-12T18:59:50.458+0000] {logging_mixin.py:188} WARNING - /opt/airflow/dags/i202478_dag.py:207 SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2024-05-12T18:59:50.482+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-12T18:59:50.483+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-12T18:59:50.502+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Data_Extraction_Transformation_Loading_4, task_id=transform_data, run_id=manual__2024-05-12T18:28:05.864766+00:00, execution_date=20240512T182805, start_date=20240512T185950, end_date=20240512T185950
+[2024-05-12T18:59:50.578+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-12T18:59:50.620+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-05-12T18:59:50.632+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
