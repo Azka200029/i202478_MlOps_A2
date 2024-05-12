@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  sleek-airflow:
+    image: i202478_a2:latest
+    volumes:
+      - ./airflow:/opt/airflow
+    ports:
+      - "8080:8081"  # Map host port 8080 to container port 8080
+    command: airflow standalone

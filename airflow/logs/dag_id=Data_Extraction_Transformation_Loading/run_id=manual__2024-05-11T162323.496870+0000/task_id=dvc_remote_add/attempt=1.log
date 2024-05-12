@@ -1,0 +1,37 @@
+[2024-05-11T17:15:16.591+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-11T17:15:16.622+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Data_Extraction_Transformation_Loading.dvc_remote_add manual__2024-05-11T16:23:23.496870+00:00 [queued]>
+[2024-05-11T17:15:16.636+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Data_Extraction_Transformation_Loading.dvc_remote_add manual__2024-05-11T16:23:23.496870+00:00 [queued]>
+[2024-05-11T17:15:16.636+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-05-11T17:15:16.666+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dvc_remote_add> on 2024-05-11 16:23:23.496870+00:00
+[2024-05-11T17:15:16.676+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'Data_Extraction_Transformation_Loading', 'dvc_remote_add', 'manual__2024-05-11T16:23:23.496870+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/i202478_dag.py', '--cfg-path', '/tmp/tmp65kjdtob']
+[2024-05-11T17:15:16.677+0000] {standard_task_runner.py:91} INFO - Job 10: Subtask dvc_remote_add
+[2024-05-11T17:15:16.679+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=131) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-05-11T17:15:16.680+0000] {standard_task_runner.py:63} INFO - Started process 140 to run task
+[2024-05-11T17:15:16.749+0000] {task_command.py:426} INFO - Running <TaskInstance: Data_Extraction_Transformation_Loading.dvc_remote_add manual__2024-05-11T16:23:23.496870+00:00 [running]> on host 3c55fa953450
+[2024-05-11T17:15:16.868+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='Data_Extraction_Transformation_Loading' AIRFLOW_CTX_TASK_ID='dvc_remote_add' AIRFLOW_CTX_EXECUTION_DATE='2024-05-11T16:23:23.496870+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-11T16:23:23.496870+00:00'
+[2024-05-11T17:15:16.869+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-11T17:15:16.881+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-05-11T17:15:16.883+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'dvc remote add -d my_google_drive gdrive://1i3kGKsxTKMw3-tN9wpJ6fHjrIOoFaO0j -f']
+[2024-05-11T17:15:16.893+0000] {subprocess.py:86} INFO - Output:
+[2024-05-11T17:15:16.895+0000] {subprocess.py:93} INFO - /usr/bin/bash: line 1: dvc: command not found
+[2024-05-11T17:15:16.896+0000] {subprocess.py:97} INFO - Command exited with return code 127
+[2024-05-11T17:15:16.897+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-11T17:15:16.918+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2024-05-11T17:15:16.924+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=Data_Extraction_Transformation_Loading, task_id=dvc_remote_add, run_id=manual__2024-05-11T16:23:23.496870+00:00, execution_date=20240511T162323, start_date=20240511T171516, end_date=20240511T171516
+[2024-05-11T17:15:16.954+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 10 for task dvc_remote_add (Bash command failed. The command returned a non-zero exit code 127.; 140)
+[2024-05-11T17:15:16.975+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-11T17:15:16.999+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-11T17:15:17.001+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
