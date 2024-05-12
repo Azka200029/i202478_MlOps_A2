@@ -1,0 +1,31 @@
+[2024-05-12T20:41:41.264+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-12T20:41:41.321+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Data_Extraction_Transformation_Loading.extract_data manual__2024-05-12T20:40:30.453200+00:00 [queued]>
+[2024-05-12T20:41:41.347+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Data_Extraction_Transformation_Loading.extract_data manual__2024-05-12T20:40:30.453200+00:00 [queued]>
+[2024-05-12T20:41:41.348+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-05-12T20:41:41.427+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extract_data> on 2024-05-12 20:40:30.453200+00:00
+[2024-05-12T20:41:41.447+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'Data_Extraction_Transformation_Loading', 'extract_data', 'manual__2024-05-12T20:40:30.453200+00:00', '--job-id', '166', '--raw', '--subdir', 'DAGS_FOLDER/i202478_dag.py', '--cfg-path', '/tmp/tmpfxeyb2bg']
+[2024-05-12T20:41:41.451+0000] {standard_task_runner.py:91} INFO - Job 166: Subtask extract_data
+[2024-05-12T20:41:41.455+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-05-12T20:41:41.456+0000] {standard_task_runner.py:63} INFO - Started process 223 to run task
+[2024-05-12T20:41:41.612+0000] {task_command.py:426} INFO - Running <TaskInstance: Data_Extraction_Transformation_Loading.extract_data manual__2024-05-12T20:40:30.453200+00:00 [running]> on host 3a6423a4af12
+[2024-05-12T20:41:41.840+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='Data_Extraction_Transformation_Loading' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-12T20:40:30.453200+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-12T20:40:30.453200+00:00'
+[2024-05-12T20:41:41.841+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-12T20:49:43.073+0000] {logging_mixin.py:188} INFO - Error occurred while accessing https://www.dawn.com/authors/815/reema-omer: 403 Client Error: Forbidden for url: https://www.dawn.com/authors/815/reema-omer
+[2024-05-12T20:49:50.176+0000] {logging_mixin.py:188} INFO - Error occurred while accessing https://www.dawn.com/news/1832621/education-emergency: 403 Client Error: Forbidden for url: https://www.dawn.com/news/1832621/education-emergency
+[2024-05-12T20:50:08.071+0000] {logging_mixin.py:188} INFO - Error occurred while accessing https://www.dawn.com/news/1833000/adb-links-support-with-imfs-clean-chit: 403 Client Error: Forbidden for url: https://www.dawn.com/news/1833000/adb-links-support-with-imfs-clean-chit
+[2024-05-12T20:50:14.186+0000] {logging_mixin.py:188} INFO - Error occurred while accessing https://www.dawn.com/news/1832993/areas-of-cooperation-with-saudi-arabia-identified-pm-shehbaz: 403 Client Error: Forbidden for url: https://www.dawn.com/news/1832993/areas-of-cooperation-with-saudi-arabia-identified-pm-shehbaz
+[2024-05-12T20:50:18.606+0000] {logging_mixin.py:188} INFO - Error occurred while accessing https://www.dawn.com/news/1832994: 403 Client Error: Forbidden for url: https://www.dawn.com/news/1832994
+[2024-05-12T20:50:43.959+0000] {logging_mixin.py:188} INFO - Error occurred while accessing https://www.dawn.com/news/1833021: 403 Client Error: Forbidden for url: https://www.dawn.com/news/1833021
+[2024-05-12T20:52:18.038+0000] {logging_mixin.py:188} INFO - Error occurred while accessing https://www.dawn.com/news/1833005/art-group-employs-brainwaves-ai-to-recreate-landscapes: 403 Client Error: Forbidden for url: https://www.dawn.com/news/1833005/art-group-employs-brainwaves-ai-to-recreate-landscapes
+[2024-05-12T20:52:34.900+0000] {logging_mixin.py:188} INFO - Error occurred while accessing https://www.dawn.com/news/1831980/people-with-two-copies-of-a-risk-gene-have-genetic-form-of-alzheimers-say-scientists: 403 Client Error: Forbidden for url: https://www.dawn.com/news/1831980/people-with-two-copies-of-a-risk-gene-have-genetic-form-of-alzheimers-say-scientists
+[2024-05-12T20:52:36.946+0000] {logging_mixin.py:188} INFO - Error occurred while accessing https://www.dawn.com/authors/422/reuters: 403 Client Error: Forbidden for url: https://www.dawn.com/authors/422/reuters
+[2024-05-12T20:53:17.554+0000] {logging_mixin.py:188} INFO - Error occurred while accessing https://www.dawn.com/authors/11037/oliver-bown: 403 Client Error: Forbidden for url: https://www.dawn.com/authors/11037/oliver-bown
+[2024-05-12T20:53:24.154+0000] {logging_mixin.py:188} INFO - Error occurred while accessing https://www.dawn.com/news/1832574/the-grapevine: 403 Client Error: Forbidden for url: https://www.dawn.com/news/1832574/the-grapevine
+[2024-05-12T20:53:31.991+0000] {logging_mixin.py:188} INFO - Error occurred while accessing https://www.dawn.com/newspaper/business-finance: 403 Client Error: Forbidden for url: https://www.dawn.com/newspaper/business-finance
+[2024-05-12T20:54:40.855+0000] {logging_mixin.py:188} INFO - Error occurred while accessing https://twitter.com/dawn_com: 400 Client Error: Bad Request for url: https://twitter.com/dawn_com
+[2024-05-12T20:58:32.736+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-12T20:58:32.738+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-12T20:58:32.761+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Data_Extraction_Transformation_Loading, task_id=extract_data, run_id=manual__2024-05-12T20:40:30.453200+00:00, execution_date=20240512T204030, start_date=20240512T204141, end_date=20240512T205832
+[2024-05-12T20:58:32.870+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-12T20:58:32.949+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-05-12T20:58:32.970+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

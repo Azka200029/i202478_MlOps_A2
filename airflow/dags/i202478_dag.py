@@ -208,7 +208,7 @@ def transform_data():
     news_links_dataset_v3.to_csv('/opt/airflow/dvc_repo/dataset_news_new.csv', index=False)
 
 dag = DAG(
-    'Data_Extraction_Transformation_Loading_4',
+    'Data_Extraction_Transformation_Loading',
     default_args=default_args,
     description='DAG to automate Data Extraction, Data Transformation, and Data Loading',
     schedule_interval='@daily',
@@ -219,6 +219,13 @@ install_dvc_gdrive = BashOperator(
     bash_command='pip install dvc[gdrive]',
     dag=dag,
 )
+
+check_dvc_gdrive = BashOperator(
+    task_id='check_dvc_gdrive',
+    bash_command='python -c "import dvc_gdrive"',
+    dag=dag,
+)
+
 
 # Directory creation for DVC operations
 create_dvc_directory = BashOperator(
@@ -269,6 +276,6 @@ dvc_push_task = BashOperator(
 )
 
 # Define task dependencies
-create_dvc_directory >> dvc_init_task
+create_dvc_directory >> install_dvc_gdrive >> check_dvc_gdrive >> dvc_init_task
 dvc_init_task >> dvc_remote_add_task  
 dvc_remote_add_task >> extract_data_task >> transform_data_task >> dvc_add_task >> dvc_push_task
