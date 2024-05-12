@@ -12945,3 +12945,11 @@ File Path                         PID    Runtime      # DAGs    # Errors  Last R
 [2024-05-12T20:58:34.289+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
 [2024-05-12T20:58:34.291+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
 [2024-05-12T20:58:34.359+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2024-05-12T20:58:35.660+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/i202478_dag.py                           1           0  1.11s           2024-05-12T20:58:35
+================================================================================
